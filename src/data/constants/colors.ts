@@ -1,7 +1,0 @@
-export const COLORS = {
-  PRIMARY_COLOR: '#FC0059',
-  SOLID_BLACK: '#141517',
-  SHADE_30: '#222326',
-  SHADE_20: '#303133',
-  SHADE_10: '#84868D'
-} as const
