@@ -6,14 +6,14 @@ const tsConfigPath = path.resolve(__dirname, "./tsconfig.json")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: ['./src/main.ts', './src/assets/styles/index.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
     clean: true
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts'],
     plugins:[
       new TsconfigPathsPlugin({
         configFile: tsConfigPath
