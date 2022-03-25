@@ -1,3 +1,4 @@
+import type { COLORS, FONT_SIZE } from '@constants'
 import { API_REQUEST } from '@constants'
 
 const { DEFAULT_RESPONSE } = API_REQUEST
@@ -16,4 +17,10 @@ type INewState<StateType> = {
 /** API Response */
 type IApiResponse = typeof DEFAULT_RESPONSE
 
-export type { IComponentParams, INewState, IApiResponse }
+/** Colors */
+type IColorsKey = keyof typeof COLORS
+
+/** Fonts */
+type IFontKey = keyof typeof FONT_SIZE
+
+export type { IComponentParams, INewState, IApiResponse, IColorsKey, IFontKey }
