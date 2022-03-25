@@ -4,7 +4,8 @@
   "description": "바닐라 자바스크립트를 이용하여 구현된 영화 자동 검색기 입니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+		"dev": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
