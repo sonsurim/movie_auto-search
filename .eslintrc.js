@@ -30,6 +30,7 @@ module.exports = {
 				alphabetize: { order: 'asc', ignoreCase: true },
 			},
 		],
+		'no-prototype-builtins': 0,
 		'@typescript-eslint/array-type': ['error', { default: 'array' }],
 		'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 		'@typescript-eslint/consistent-type-imports': 'error',
