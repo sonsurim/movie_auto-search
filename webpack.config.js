@@ -3,6 +3,7 @@ const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const tsConfigPath = path.resolve(__dirname, "./tsconfig.json")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/main.ts',
@@ -32,6 +33,11 @@ module.exports = {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        exclude: /node_modules/
       }
 		]
 	},
@@ -50,6 +56,9 @@ module.exports = {
 			patterns: [
 				{ from: 'public/favicon.ico'}
 			]
-		})
+		}),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/style.[contenthash].css',
+    })
   ]
 }
