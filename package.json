@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/sonsurim/movie_auto-search/issues"
   },
-  "homepage": "https://github.com/sonsurim/movie_auto-search#readme"
+  "homepage": "https://github.com/sonsurim/movie_auto-search#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^10.2.4",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
 }
