@@ -1,3 +1,8 @@
+import { API_REQUEST } from '@constants'
+
+const { DEFAULT_RESPONSE } = API_REQUEST
+
+/** Component */
 interface IComponentParams<StateType> {
   node: Element
   initalState: StateType | null
@@ -8,4 +13,7 @@ type INewState<StateType> = {
   [Key in keyof StateType]?: StateType[keyof StateType]
 }
 
-export type { IComponentParams, INewState }
+/** API Response */
+type IApiResponse = typeof DEFAULT_RESPONSE
+
+export type { IComponentParams, INewState, IApiResponse }
