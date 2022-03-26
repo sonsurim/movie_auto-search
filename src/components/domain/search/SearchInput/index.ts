@@ -6,6 +6,8 @@ import type { ISearchInput } from './types'
 export default class SearchInput extends Component<ISearchInput> {
   handleInput: (e: any) => void
   handleClear: (e: any) => void
+  handleFocus: () => void
+  handleBlur: () => void
 
   template(): string {
     return `
@@ -18,7 +20,7 @@ export default class SearchInput extends Component<ISearchInput> {
   }
 
   init(): void {
-    const { onChange } = this.state
+    const { onChange, onFocus } = this.state
 
     this.handleInput = (e): void => {
       const keyword = e.target.value
@@ -45,12 +47,24 @@ export default class SearchInput extends Component<ISearchInput> {
       e.target.classList.add('hide')
       onChange?.('')
     }
+
+    this.handleFocus = (): void => {
+      onFocus(true)
+    }
+
+    this.handleBlur = (): void => {
+      onFocus(false)
+    }
   }
 
   attachChildComponent(): void {
     new Input({
       node: selectEl(this.node, 'Input'),
-      initalState: { onChange: this.handleInput }
+      initalState: {
+        onChange: this.handleInput,
+        onFocus: this.handleFocus,
+        onBlur: this.handleBlur
+      }
     })
   }
 

@@ -10,9 +10,13 @@ export default class Input extends Component<IInput> {
 
   setEvent(): void {
     this.node.addEventListener('input', this.state.onChange)
+    this.node.addEventListener('focus', this.state.onFocus)
+    this.node.addEventListener('blur', this.state.onBlur)
   }
 
   clearEvent(): void {
     this.node.removeEventListener('input', this.state.onChange)
+    this.node.removeEventListener('focus', this.state.onFocus)
+    this.node.removeEventListener('blur', this.state.onBlur)
   }
 }

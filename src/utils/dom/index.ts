@@ -31,7 +31,10 @@ function convertTemplateAsComponent(): void {
 
   // CSS 상속
   const oldCSS = oldNode.classList.value.trim()
-  this.node.className = oldCSS
+  const newCSS = this.node.classList.value.trim()
+  const isChangedCSS = oldCSS !== newCSS
+  const cssValue = isChangedCSS ? newCSS : oldCSS
+  this.node.className = cssValue
 
   oldNode.remove()
 }
