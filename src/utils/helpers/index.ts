@@ -8,6 +8,6 @@ export const debounce: IDebounce = (callback, delay) => {
       clearTimeout(timerId)
     }
 
-    timerId = setTimeout(callback, delay, event)
+    timerId = window.setTimeout(callback, delay, event)
   }
 }
