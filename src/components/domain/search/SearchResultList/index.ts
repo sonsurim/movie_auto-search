@@ -8,7 +8,7 @@ export default class SearchResultList extends Component<ISearchResultList> {
     return `
     <ul class="${listVisible ? '' : 'hide'}">
       ${listData
-        .map(({ id, text }, idx) => {
+        ?.map(({ id, text }, idx) => {
           return `
             <li data-id="${id}" ${
             currentKeywordId === idx + 1 ? 'style="color: red;"' : ''
