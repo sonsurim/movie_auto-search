@@ -1,6 +1,6 @@
 import { Component, SearchInput } from '@components'
 import type { IAppComponentState, IComponentParams } from '@models'
-import { selectEl } from '@utils'
+import { selectEl, debounce } from '@utils'
 
 export default class App extends Component<IAppComponentState> {
   constructor({ node }: IComponentParams<IAppComponentState>) {
@@ -25,7 +25,7 @@ export default class App extends Component<IAppComponentState> {
       node: selectEl(this.node, 'SearchInput'),
       initalState: {
         keyword: '',
-        onChange: (keyword): void => {
+        onChange: debounce((keyword): void => {
           this.setState({
             keyword
           })
@@ -35,7 +35,7 @@ export default class App extends Component<IAppComponentState> {
           }
 
           console.log('api 호출!', this.state)
-        }
+        }, 200)
       }
     })
   }
