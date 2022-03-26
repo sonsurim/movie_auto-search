@@ -17,6 +17,7 @@ interface IAppComponentState {
   keyword: string
   listData: IListItem[]
   listVisible: boolean
+  currentKeywordId: number
 }
 
 interface IListItem {
