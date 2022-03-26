@@ -13,7 +13,7 @@ module.exports = {
     clean: true
   },
   resolve: {
-    extensions: ['.ts'],
+    extensions: ['.ts', '.js'],
     plugins:[
       new TsconfigPathsPlugin({
         configFile: tsConfigPath
@@ -63,7 +63,7 @@ module.exports = {
   devServer: {
     client: {
       logging: 'none'
-    }
+    },
   },
   plugins: [
     new HtmlPlugin({
