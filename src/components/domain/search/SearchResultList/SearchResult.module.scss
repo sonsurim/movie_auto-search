@@ -1,0 +1,19 @@
+@import '../../../../assets/styles/variables.scss';
+
+.listWrapper {
+  position: absolute;
+  top:200px;
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $SHADE_20;
+
+  li {
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+
+.selected {
+  color: $PRIMARY_COLOR;
+}
