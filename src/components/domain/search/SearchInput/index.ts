@@ -1,6 +1,7 @@
 import { Component, Input } from '@components'
 import { ICON_SEARCH, ICON_CLOSE } from '@constants'
 import { selectEl } from '@utils'
+import styles from './SearchInput.module.scss'
 import type { ISearchInput } from './types'
 
 export default class SearchInput extends Component<ISearchInput> {
@@ -10,11 +11,13 @@ export default class SearchInput extends Component<ISearchInput> {
   handleBlur: () => void
 
   template(): string {
+    const { inputWrapper, closeBtn } = styles
+
     return `
-      <div>
+      <div class="${inputWrapper}">
         <img src="${ICON_SEARCH}" />
         <Input></Input>
-        <img src="${ICON_CLOSE}" data-btn="clear" class="hide"/>
+        <img src="${ICON_CLOSE}" data-btn="clear" class="hide ${closeBtn}"/>
       </div>
     `
   }
@@ -61,6 +64,7 @@ export default class SearchInput extends Component<ISearchInput> {
     new Input({
       node: selectEl(this.node, 'Input'),
       initalState: {
+        placeholder: '제목, 감독, 배우로 검색',
         onChange: this.handleInput,
         onFocus: this.handleFocus,
         onBlur: this.handleBlur

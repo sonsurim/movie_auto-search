@@ -3,8 +3,10 @@ import type { IInput } from './types'
 
 export default class Input extends Component<IInput> {
   template(): string {
+    const { placeholder } = this.state
+
     return `
-      <input type="text" />
+      <input type="text" placeholder="${placeholder || ''}"/>
     `
   }
 

@@ -1,3 +1,25 @@
-.hide {
-  display: none;
+@import '../../../../assets/styles/variables.scss';
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 50px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: $SHADE_30;
+
+  input {
+    margin-left: 15px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: $SOLID_WHITE;
+    font-size: $FONT_NORMAL;
+  }
+}
+
+.closeBtn {
+  cursor: pointer;
 }
