@@ -16,6 +16,7 @@ type INewState<StateType> = {
 interface IAppComponentState {
   keyword: string
   listData: IListItem[]
+  listVisible: boolean
 }
 
 interface IListItem {

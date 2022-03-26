@@ -3,10 +3,10 @@ import type { ISearchResultList } from './types'
 
 export default class SearchResultList extends Component<ISearchResultList> {
   template(): string {
-    const { listData } = this.state
+    const { listData, listVisible } = this.state
 
     return `
-    <ul>
+    <ul class="${listVisible ? '' : 'hide'}">
       ${listData
         .map(({ id, text }) => {
           return `<li data-id="${id}">${text}</li>`
