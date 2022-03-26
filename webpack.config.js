@@ -9,7 +9,7 @@ module.exports = {
   entry: ['./src/main.ts', './src/assets/styles/index.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js',
+    filename: 'js/[name].bundle.js',
     clean: true
   },
   resolve: {
@@ -19,6 +19,9 @@ module.exports = {
         configFile: tsConfigPath
       })
     ]
+  },
+  performance: {
+    hints: process.env.NODE_ENV === 'production' ? "warning" : false
   },
 	module: {
 		rules: [
