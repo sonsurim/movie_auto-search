@@ -1,6 +1,6 @@
 interface ISearchInput {
   keyword: string
-  onChange(e: any): void
+  onChange(keyword: string): void
 }
 
 export type { ISearchInput }
