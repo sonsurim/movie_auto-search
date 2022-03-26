@@ -1,7 +1,6 @@
 import { Component, Input } from '@components'
 import { ICON_SEARCH, ICON_CLOSE } from '@constants'
 import { selectEl } from '@utils'
-import styles from './SearchInput.module.scss'
 import type { ISearchInput } from './types'
 
 export default class SearchInput extends Component<ISearchInput> {
@@ -9,29 +8,26 @@ export default class SearchInput extends Component<ISearchInput> {
   handleClear: (e: any) => void
 
   template(): string {
-    const { hide } = styles
-
     return `
       <div>
         <img src="${ICON_SEARCH}" />
         <Input></Input>
-        <img src="${ICON_CLOSE}" data-btn="clear" class="${hide}"/>
+        <img src="${ICON_CLOSE}" data-btn="clear" class="hide"/>
       </div>
     `
   }
 
   init(): void {
     const { onChange } = this.state
-    const { hide } = styles
 
     this.handleInput = (e): void => {
       const keyword = e.target.value
       const clearBtnEl = selectEl(this.node, '[data-btn="clear"]')
 
       if (keyword) {
-        clearBtnEl.classList.remove(hide)
+        clearBtnEl.classList.remove('hide')
       } else {
-        clearBtnEl.classList.add(hide)
+        clearBtnEl.classList.add('hide')
       }
 
       onChange?.(keyword)
@@ -46,7 +42,7 @@ export default class SearchInput extends Component<ISearchInput> {
       }
 
       input.value = ''
-      e.target.classList.add(hide)
+      e.target.classList.add('hide')
       onChange?.('')
     }
   }
