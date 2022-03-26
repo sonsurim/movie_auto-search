@@ -1,7 +1,9 @@
 import { Component, SearchInput, SearchResultList } from '@components'
+import { IMAGE_LOGO } from '@constants'
 import type { IAppComponentState, IComponentParams } from '@models'
 import { getMovieList } from '@services'
 import { selectEl, debounce } from '@utils'
+import styles from './App.module.scss'
 
 export default class App extends Component<IAppComponentState> {
   handleKeyup: (e: any) => void
@@ -19,10 +21,17 @@ export default class App extends Component<IAppComponentState> {
   }
 
   template(): string {
+    const { container, containerWrapper, logo } = styles
+
     return `
       <main id="#App">
-        <SearchInput></SearchInput>
-        <SearchResultList></SearchResultList>
+        <div class="${container}">
+          <div class="${containerWrapper}">
+            <img class="${logo}" src="${IMAGE_LOGO}" alt="logo">
+            <SearchInput></SearchInput>
+            <SearchResultList></SearchResultList>
+          </div>
+        </div>
       </main>
     `
   }
